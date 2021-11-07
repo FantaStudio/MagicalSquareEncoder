@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Text.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <sys:Double x:Key="Small">24</sys:Double>
+    <sys:Double x:Key="Default">36</sys:Double>
+    <sys:Double x:Key="Large">48</sys:Double>
+    <Thickness x:Key="BorderWidth">2</Thickness>
+    <CornerRadius x:Key="Radius">3</CornerRadius>
+
+    <Style TargetType="{x:Type Control}" x:Key="ElementBase">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="15" />
+    </Style>
+
+    <Style TargetType="{x:Type Control}" x:Key="SmallElement" BasedOn="{StaticResource ElementBase}">
+        <Setter Property="Height" Value="{StaticResource Small}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Control}" x:Key="Element" BasedOn="{StaticResource ElementBase}">
+        <Setter Property="Height" Value="{StaticResource Default}"/>
+    </Style>
+
+    <Style TargetType="{x:Type Control}" x:Key="LargeElement" BasedOn="{StaticResource ElementBase}">
+        <Setter Property="Height" Value="{StaticResource Large}"/>
+    </Style>
+
+    <Style x:Key="ESplitter" TargetType="{x:Type Rectangle}">
+        <Setter Property="Fill" Value="{StaticResource Grey_3}"/>
+        <Setter Property="Height" Value="1"/>
+    </Style>
+
+</ResourceDictionary>
